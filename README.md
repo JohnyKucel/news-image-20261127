@@ -6,7 +6,7 @@
 
 A single-image broadsheet front page for the make.fun
 [news-image-20261127](https://make.fun/bounty/news-image-20261127) bounty:
-**Friday 27 November 2026 — 35 dated stories, 8 regions.**
+**Friday 27 November 2026 — 35 dated stories, 7 regions.**
 
 Lead story: China stocks surge as Beijing unleashes the "national team"
 — Shanghai +3.3%, its sharpest one-day rise in over two years, STAR 50

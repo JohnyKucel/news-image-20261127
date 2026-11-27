@@ -90,8 +90,7 @@ REGIONS = [
     ("AMERICAS", 4, RED),
     ("AFRICA", 4, GOLD),
     ("SOUTH ASIA", 4, ORANGE),
-    ("CRYPTO", 1, (150, 110, 20, 255)),
-    ("MARKETS & CULTURE", 2, (85, 85, 85, 255)),
+    ("WORLD", 3, (85, 85, 85, 255)),
 ]
 
 BADGE_FILL = {
@@ -176,7 +175,7 @@ LOW = [
      "short US session.", "bitcoin"),
     ("CLIMATE  ·  WORLD", "REPORTED", "The Guardian",
      "Earth exceeds 2°C of warming for seven straight days",
-     "A first on record; Australia braces for a summer of bushfire risk.", "thermo"),
+     "A first on record; Australia faces a summer of bushfire risk.", "thermo"),
 ]
 
 # 22 ALSO ON items: (place, headline, source)
@@ -211,7 +210,7 @@ NUMBERS = [
     ("12", "Fear & Greed, Extreme Fear"),
     ("$10bn", "IDB funding for Peru"),
     ("+20.1%", "China industrial profits"),
-    ("+6.7%", "Kosdaq jump Friday"),
+    ("65", "NZ coalition seats, one short"),
 ]
 
 UTC = [
@@ -241,7 +240,7 @@ def build_masthead():
     d.text(((984 - d.textlength(date, font=f_date)) / 2, 16), date,
            font=f_date, fill=INK)
     f_sub = font(SANS_B, 12)
-    sub = "35 STORIES  ·  8 REGIONS  ·  ALL FROM THIS ONE DAY"
+    sub = "35 STORIES  ·  7 REGIONS  ·  ALL FROM THIS ONE DAY"
     d.text(((984 - d.textlength(sub, font=f_sub)) / 2, 84), sub,
            font=f_sub, fill=RED)
     rule(d, 0, 97, 984, INK, 2)
@@ -483,8 +482,8 @@ def build_small_card(prefix, idx, item):
     ILLOS[key](d, w, 54, ILLO_BG[key])
     d.line([(0, 54), (w, 54)], fill=INK, width=1)
     kicker_line(d, 6, 58, w - 12, place, place.split("  ·  ")[1], conf)
-    y = para(d, 6, 72, head, font(SANS_B, 11), INK, w - 12, 13)
-    para(d, 6, y + 1, deck, font(SANS, 9), FAINT, w - 12, 11)
+    y = para(d, 6, 72, head, font(SANS_B, 12), INK, w - 12, 14)
+    para(d, 6, y + 1, deck, font(SANS, 10), FAINT, w - 12, 12)
     d.text((6, h - 13), "Source: " + source, font=font(SANS, 8), fill=SMOKE)
     save(img, "t_%s%d.png" % (prefix, idx))
 
@@ -535,10 +534,10 @@ def build_datecheck():
     d.text((8, 5), "DATE CHECK — LEFT OUT ON PURPOSE",
            font=font(SANS_B, 11), fill=RED)
     para(d, 8, 21,
-         "Kuwait drone attack — 26 Nov, not today (it led yesterday’s paper)  ·  "
-         "COP31 collapsed 22 Nov  ·  Trump–Putin post 26 Nov  ·  Macy’s parade "
-         "postponed to Sat, not cancelled  ·  Depardieu faces trial, not convicted  ·  "
-         "“BTC $93k” is a stale wrong-year page  ·  Sri Lanka A beat India A on 26 Nov",
+         "Kuwait drone attack - 26 Nov, not today (it led yesterday's paper)  -  "
+         "COP31 collapsed 22 Nov  -  Trump-Putin post 26 Nov  -  Macy's parade "
+         "postponed to Sat, not cancelled  -  Depardieu faces trial, not convicted  -  "
+         "\"BTC $93k\" is a stale wrong-year page  -  Sri Lanka A beat India A on 26 Nov",
          font(SANS, 10), INK, 968, 13)
     save(img, "t_datecheck.png")
 
@@ -547,11 +546,11 @@ def build_footer():
     img = tile(984, 14)
     d = ImageDraw.Draw(img)
     d.text((0, 1),
-           "HOW SURE:  CONFIRMED = 2+ outlets  ·  OFFICIAL = on the record  ·  "
-           "REPORTED = one outlet  ·  CLAIM = one side’s account",
-           font=font(SANS, 9), fill=FAINT)
+           "HOW SURE:  CONFIRMED = 2+ outlets  -  OFFICIAL = on the record  -  "
+           "REPORTED = one outlet  -  CLAIM = one side's account",
+           font=font(SANS_B, 10), fill=FAINT)
     d.text((984 - 210, 1), "THE WORLD IN ONE DAY  ·  PAGE 1",
-           font=font(SANS_B, 9), fill=INK)
+           font=font(SANS_B, 10), fill=INK)
     save(img, "t_footer.png")
 
 
